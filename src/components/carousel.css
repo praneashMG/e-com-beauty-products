@@ -1,38 +1,29 @@
 .carousel-wrapper {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.carousel-inner {
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+  animation: scroll 30s linear infinite;
+}
+
+.carousel-item {
+  flex-shrink: 0;
+  width: 200px;
+  height: 300px;
+  margin-right: 16px; /* Adjust spacing between items as needed */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
   }
-  
-  .carousel-container {
-    display: flex;
-    width: 200%; /* 100% for each set of products */
-    animation: scroll 20s linear infinite;
+  100% {
+    transform: translateX(-100%);
   }
-  
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-  
-  /* Disable text selection */
-.carousel-container {
-    user-select: none; /* Standard syntax */
-    -webkit-user-select: none; /* Chrome, Safari, and Opera */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-  }
-  
-  .scrollbar-hidden {
-    scrollbar-width: none; /* For Firefox */
-    -ms-overflow-style: none; /* For Internet Explorer and Edge */
-  }
-  
-  .scrollbar-hidden::-webkit-scrollbar {
-    display: none; /* For Chrome, Safari, and Opera */
-  }
-  
+}
