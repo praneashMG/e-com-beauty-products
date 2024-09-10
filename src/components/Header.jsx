@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FiSearch, FiUser, FiShoppingCart, FiX, FiMenu } from 'react-icons/fi';
 
 const Header = () => {
@@ -23,9 +24,9 @@ const Header = () => {
 
         {/* Nav links for desktop and tablet */}
         <nav className="hidden md:flex items-center space-x-4 md:space-x-6">
-          <a href="#" className="text-gray-700 hover:text-gray-900">Home</a>
+          <a href="/home" className="text-gray-700 hover:text-gray-900">Home</a>
           <a href="#" className="text-gray-700 hover:text-gray-900">Shop</a>
-          <a href="#" className="text-gray-700 hover:text-gray-900">Blog</a>
+          <a href="/blog" className="text-gray-700 hover:text-gray-900">Blog</a>
           <a href="#" className="text-gray-700 hover:text-gray-900">About</a>
           <a href="#" className="text-gray-700 hover:text-gray-900">Contact</a>
           <a href="#" className="text-gray-700 hover:text-gray-900">FAQ</a>
@@ -62,9 +63,9 @@ const Header = () => {
             </button>
           </div>
           <div className="flex flex-col items-start px-6 py-2">
-            <a href="#" className="text-gray-700 hover:text-gray-900 py-2">Home</a>
+            <a href="/home" className="text-gray-700 hover:text-gray-900 py-2">Home</a>
             <a href="#" className="text-gray-700 hover:text-gray-900 py-2">Shop</a>
-            <a href="#" className="text-gray-700 hover:text-gray-900 py-2">Blog</a>
+            <a href="/blog" className="text-gray-700 hover:text-gray-900">Blog</a>
             <a href="#" className="text-gray-700 hover:text-gray-900 py-2">About</a>
             <a href="#" className="text-gray-700 hover:text-gray-900 py-2">Contact</a>
             <a href="#" className="text-gray-700 hover:text-gray-900 py-2">FAQ</a>
