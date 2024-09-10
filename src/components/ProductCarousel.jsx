@@ -1,5 +1,4 @@
-import React from 'react';
-import './carousel.css'; 
+import React, { useEffect, useRef } from 'react';
 
 const ProductCarousel = () => {
   const products = [
@@ -35,58 +34,79 @@ const ProductCarousel = () => {
     },
   ];
 
-  // Duplicate the products array multiple times
   const duplicatedProducts = [...products, ...products, ...products, ...products];
+
+  const carouselRef = useRef(null);
+
+  useEffect(() => {
+    const scrollSpeed = 2; // Increase the scroll speed for visibility
+    const scrollStep = () => {
+      const carousel = carouselRef.current;
+      if (carousel) {
+        // Scroll left by scrollSpeed amount
+        carousel.scrollLeft += scrollSpeed;
+        // Reset scroll when reaching the end
+        if (carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth) {
+          carousel.scrollLeft = 0;
+        }
+      }
+    };
+
+    const intervalId = setInterval(scrollStep, 20); // Adjust the interval for smoother scroll
+
+    return () => clearInterval(intervalId); // Cleanup on component unmount
+  }, []);
 
   return (
     <div className="flex items-center justify-center bg-purple-100" style={{ backgroundColor: '#D6C7E3' }}>
       <div className="w-full max-w-screen-xl p-4">
         <div className="py-6">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-purple-900">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-center text-purple-900">
             <span className="text-pink-600">Best Seller</span> Featured Products
           </h2>
         </div>
         <div className="relative overflow-hidden">
-          <div className="carousel-wrapper">
-            <div className="carousel-inner">
-              {/* Render the products */}
-              {duplicatedProducts.map((product, index) => (
-                <div
-                  key={index}
-                  className="carousel-item bg-white p-4 rounded-lg shadow-lg"
-                >
-                  <div className="relative w-full h-3/4">
-                    {product.onSale && (
-                      <span className="absolute top-2 left-2 bg-purple-600 text-white text-xs font-bold px-2 py-1 rounded-full">
-                        Sale
-                      </span>
-                    )}
-                    <img
-                      src={product.imgSrc}
-                      alt={product.name}
-                      className="w-full h-full object-cover rounded-lg"
-                    />
-                  </div>
-                  <div className="mt-4 text-center">
-                    <h3 className="text-sm md:text-lg font-semibold">{product.name}</h3>
-                    {product.oldPrice ? (
-                      <div className="mt-2">
-                        <span className="text-gray-400 line-through">
-                          {product.currency} {product.oldPrice}
-                        </span>{" "}
-                        <span className="text-black font-bold">
-                          {product.currency} {product.newPrice}
-                        </span>
-                      </div>
-                    ) : (
-                      <div className="mt-2 text-black font-bold">
-                        {product.currency} {product.price}
-                      </div>
-                    )}
-                  </div>
+          <div
+            ref={carouselRef}
+            className="flex overflow-x-auto space-x-4 py-4 whitespace-nowrap"
+            style={{ scrollbarWidth: 'none' }} // Hide scrollbar for smooth appearance
+          >
+            {duplicatedProducts.map((product, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0 w-48 h-64 md:w-64 md:h-80 lg:w-80 lg:h-96 bg-white p-4 rounded-lg shadow-lg"
+              >
+                <div className="relative w-full h-3/4">
+                  {product.onSale && (
+                    <span className="absolute top-2 left-2 bg-purple-600 text-white text-xs font-bold px-2 py-1 rounded-full">
+                      Sale
+                    </span>
+                  )}
+                  <img
+                    src={product.imgSrc}
+                    alt={product.name}
+                    className="w-full h-full object-cover rounded-lg"
+                  />
                 </div>
-              ))}
-            </div>
+                <div className="mt-4 text-center">
+                  <h3 className="text-xs md:text-sm lg:text-lg font-semibold">{product.name}</h3>
+                  {product.oldPrice ? (
+                    <div className="mt-2">
+                      <span className="text-gray-400 line-through">
+                        {product.currency} {product.oldPrice}
+                      </span>{" "}
+                      <span className="text-black font-bold">
+                        {product.currency} {product.newPrice}
+                      </span>
+                    </div>
+                  ) : (
+                    <div className="mt-2 text-black font-bold">
+                      {product.currency} {product.price}
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
