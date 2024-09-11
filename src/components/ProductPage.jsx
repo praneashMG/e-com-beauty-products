@@ -53,10 +53,10 @@ const ProductPage = () => {
   });
 
   return (
-    <div className="bg-gradient-to-r from-pink-200 to-blue-200 py-20">
+    <div className="bg-white py-20">
       <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-white mb-4 text-center">Skin Care</h1>
-        <p className="text-lg text-white mb-6 text-center max-w-xl mx-auto">
+        <h1 className="text-4xl font-bold text-black mb-4 text-center">Skin Care</h1>
+        <p className="text-lg text-black mb-6 text-center max-w-xl mx-auto">
           Keep your skin looking and feeling its best with an all-natural, plant-based routine.
         </p>
 
@@ -68,7 +68,7 @@ const ProductPage = () => {
             <div className="relative w-full md:w-auto">
               <button
                 onClick={() => setIsAvailabilityDropdownOpen(!isAvailabilityDropdownOpen)}
-                className="bg-white border rounded-md px-4 py-2 text-gray-700 w-full md:w-auto hover:bg-gray-50"
+                className="bg-white border border-gray-400 rounded-md px-4 py-2 text-black w-full md:w-auto hover:bg-gray-100"
               >
                 Availability
               </button>
@@ -76,7 +76,7 @@ const ProductPage = () => {
                 <div className="absolute mt-2 bg-white shadow-lg rounded-md z-10 p-4 w-full md:w-48">
                   <ul>
                     <li className="px-4 py-2 hover:bg-gray-100">
-                      <label className="cursor-pointer">
+                      <label className="cursor-pointer text-black">
                         <input
                           type="radio"
                           name="availability"
@@ -87,7 +87,7 @@ const ProductPage = () => {
                       </label>
                     </li>
                     <li className="px-4 py-2 hover:bg-gray-100">
-                      <label className="cursor-pointer">
+                      <label className="cursor-pointer text-black">
                         <input
                           type="radio"
                           name="availability"
@@ -98,7 +98,7 @@ const ProductPage = () => {
                       </label>
                     </li>
                     <li className="px-4 py-2 hover:bg-gray-100">
-                      <label className="cursor-pointer">
+                      <label className="cursor-pointer text-black">
                         <input
                           type="radio"
                           name="availability"
@@ -117,27 +117,27 @@ const ProductPage = () => {
             <div className="relative w-full md:w-auto">
               <button
                 onClick={() => setIsPriceDropdownOpen(!isPriceDropdownOpen)}
-                className="bg-white border rounded-md px-4 py-2 text-gray-700 w-full md:w-auto hover:bg-gray-50"
+                className="bg-white border border-gray-400 rounded-md px-4 py-2 text-black w-full md:w-auto hover:bg-gray-100"
               >
                 Price
               </button>
               {isPriceDropdownOpen && (
                 <div className="absolute mt-2 bg-white shadow-lg rounded-md z-10 p-4 w-full md:w-64">
-                  <p className="text-sm text-gray-700 mb-2">The highest price is $68.00</p>
+                  <p className="text-sm text-black mb-2">The highest price is $68.00</p>
                   <div className="flex space-x-2">
                     <input
                       type="number"
                       placeholder="From"
                       value={priceRange.from}
                       onChange={(e) => handlePriceChange('from', e.target.value)}
-                      className="border px-4 py-2 rounded-md w-full"
+                      className="border px-4 py-2 rounded-md w-full text-black"
                     />
                     <input
                       type="number"
                       placeholder="To"
                       value={priceRange.to}
                       onChange={(e) => handlePriceChange('to', e.target.value)}
-                      className="border px-4 py-2 rounded-md w-full"
+                      className="border px-4 py-2 rounded-md w-full text-black"
                     />
                   </div>
                 </div>
@@ -147,9 +147,9 @@ const ProductPage = () => {
 
           {/* Sorting */}
           <div className="flex items-center space-x-4 w-full md:w-auto justify-center">
-            <span className="text-white">Sort by:</span>
+            <span className="text-black">Sort by:</span>
             <select
-              className="bg-white border rounded-md px-4 py-2 text-gray-700 w-full md:w-auto hover:bg-gray-50"
+              className="bg-white border border-gray-400 rounded-md px-4 py-2 text-black w-full md:w-auto hover:bg-gray-100"
               onChange={(e) => handleSortChange(e.target.value)}
             >
               <option value="featured">Featured</option>
@@ -170,8 +170,8 @@ const ProductPage = () => {
                     className="object-cover h-full w-full rounded-md"
                   />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800 text-center">{product.name}</h3>
-                <p className="text-gray-600 text-center">From ${product.price.toFixed(2)} CAD</p>
+                <h3 className="text-xl font-semibold text-black text-center">{product.name}</h3>
+                <p className="text-black text-center">From ${product.price.toFixed(2)} CAD</p>
               </div>
             </Link>
           ))}
