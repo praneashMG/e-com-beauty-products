@@ -2,7 +2,7 @@ import React from 'react';
 
 const NewArrivals = () => {
   return (
-    <div className="w-full px-4 py-8 bg-blue-100">
+    <div className="w-full px-4 py-8 bg-blue-0">
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
         <h2 className="text-3xl md:text-4xl font-bold text-pink-600 mb-6 text-center">

@@ -8,12 +8,12 @@ import 'slick-carousel/slick/slick-theme.css';
 const categories = [
   {
     title: 'Skin Care',
-    imageUrl: 'https://jooinn.com/images/beauty-117.jpg',
+    imageUrl: 'https://i.pinimg.com/originals/1d/72/2c/1d722c824a0119c641f8abbeabe54275.jpg',
     link: '/product', // Link to ProductPage
   },
   {
     title: 'Body Care',
-    imageUrl: 'https://centroesteticoletoile.it/wp-content/uploads/2021/12/centro-estetico-benessere-letoile-estetista-bellezza-epilazione-mantova-trattamenti-corpo-pressoterapia-body-care.jpg',
+    imageUrl: 'https://www.beautytester.it/wp-content/uploads/2018/01/gambe-secche-rimedi-naturali.jpg',
   },
   {
     title: 'Nail Polish',
@@ -21,12 +21,12 @@ const categories = [
   },
   {
     title: 'Skin Care',
-    imageUrl: 'https://jooinn.com/images/beauty-117.jpg',
+    imageUrl: 'https://i.pinimg.com/originals/1d/72/2c/1d722c824a0119c641f8abbeabe54275.jpg',
     link: '/product',
   },
   {
     title: 'Body Care',
-    imageUrl: 'https://centroesteticoletoile.it/wp-content/uploads/2021/12/centro-estetico-benessere-letoile-estetista-bellezza-epilazione-mantova-trattamenti-corpo-pressoterapia-body-care.jpg',
+    imageUrl: 'https://www.beautytester.it/wp-content/uploads/2018/01/gambe-secche-rimedi-naturali.jpg',
   },
   {
     title: 'Nail Polish',
@@ -85,7 +85,7 @@ const CategoriesGrid = () => {
   };
 
   return (
-    <div className="w-full bg-[#D3CDD9] flex justify-center py-8 sm:py-12">
+    <div className="w-full bg-[] flex justify-center py-8 sm:py-12">
       <div className="max-w-6xl w-full px-4 sm:px-6">
         <h1 className="text-2xl sm:text-3xl font-bold text-center text-pink-500 mb-8 sm:mb-12">
           Categories

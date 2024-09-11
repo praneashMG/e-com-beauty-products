@@ -12,6 +12,7 @@ import ProductPage from './components/ProductPage';
 import ProductDetail from './components/ProductDetail';
 import BlogPage from './components/BlogPage';
 import AboutUs from './components/AboutUs';
+// import CategoriesGrid from './components/CategoriesGrid';
 
 function App() {
   return (
@@ -20,10 +21,11 @@ function App() {
         <Header />
         
         <Routes>
-          <Route path="/home" element={
+          <Route path="/" element={
             <>
               <LandingPage />
               <CategoriesGrid />
+              
               <WhyBeautyProducts />
               <ProductCarousel />
               <NewArrivals />

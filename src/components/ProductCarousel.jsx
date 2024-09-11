@@ -58,7 +58,7 @@ const ProductCarousel = () => {
   }, []);
 
   return (
-    <div className="flex items-center justify-center bg-purple-100" style={{ backgroundColor: '#D6C7E3' }}>
+    <div className="flex items-center justify-center bg-purple-00" style={{ backgroundColor: '' }}>
       <div className="w-full max-w-screen-xl p-4">
         <div className="py-6">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-center text-purple-900">

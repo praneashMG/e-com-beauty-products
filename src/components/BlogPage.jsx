@@ -1,4 +1,5 @@
     import React from "react";
+    
 
     const BlogPage = () => {
     const blogs = [
@@ -9,7 +10,7 @@
         description:
             "What is self-care? We often hear about taking care of your physical appearance, your skin, your hair, and your hygiene. Some people would say that self care is about taking...",
         imageUrl:
-            "https://www.touchupssalon.com/wp-content/uploads/2017/08/hairsalonhairstylists-touchups_az.jpg",
+            "https://img.goodfon.ru/original/1920x1080/c/7a/devushka-karina-scnceva.jpg",
         },
         {
         id: 2,
@@ -18,17 +19,9 @@
         description:
             "Drinking enough water is crucial to maintaining your body’s well-being. We've all heard it: Our bodies are made up of 70% water which makes it essential to good function...",
         imageUrl:
-            "https://labelmandteotema.ru/files/uploads/blog_images/kosmetica-88.jpg",
+            "https://www.wallpaperuse.com/wallp/0-705_m.jpg",
         },
-        {
-            id: 3   ,
-            title: "Everything you need to know about hydration",
-            date: "December 15, 2021",
-            description:
-                "Drinking enough water is crucial to maintaining your body’s well-being. We've all heard it: Our bodies are made up of 70% water which makes it essential to good function...",
-            imageUrl:
-                "https://labelmandteotema.ru/files/uploads/blog_images/kosmetica-88.jpg",
-            },
+        
     ];
 
     return (
@@ -42,7 +35,7 @@
                 <img
                 src={blog.imageUrl}
                 alt={blog.title}
-                className="w-500 h-500 object-cover" // Set width and height to 500px
+                className="w-500 h-500 object-cover" 
                 />
                 <div className="p-6">
                 <h3 className="text-2xl font-semibold text-gray-800 mb-2">

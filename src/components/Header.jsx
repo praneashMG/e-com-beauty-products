@@ -24,7 +24,7 @@ const Header = () => {
 
         {/* Nav links for desktop and tablet */}
         <nav className="hidden md:flex items-center space-x-4 md:space-x-6">
-          <a href="/home" className="text-gray-700 hover:text-gray-900">Home</a>
+          <a href="/" className="text-gray-700 hover:text-gray-900">Home</a>
           <a href="#" className="text-gray-700 hover:text-gray-900">Shop</a>
           <a href="/blog" className="text-gray-700 hover:text-gray-900">Blog</a>
           <a href="/About" className="text-gray-700 hover:text-gray-900">About</a>
@@ -47,7 +47,7 @@ const Header = () => {
             </span>
           </a>
 
-          {/* Hamburger menu for mobile */}
+         
           <button onClick={toggleMenu} className="md:hidden text-gray-700 hover:text-gray-900">
             <FiMenu size={24} />
           </button>
@@ -63,7 +63,7 @@ const Header = () => {
             </button>
           </div>
           <div className="flex flex-col items-start px-6 py-2">
-            <a href="/home" className="text-gray-700 hover:text-gray-900 py-2">Home</a>
+            <a href="/" className="text-gray-700 hover:text-gray-900 py-2">Home</a>
             <a href="#" className="text-gray-700 hover:text-gray-900 py-2">Shop</a>
             <a href="/blog" className="text-gray-700 hover:text-gray-900">Blog</a>
             <a href="/About" className="text-gray-700 hover:text-gray-900 py-2">About</a>
