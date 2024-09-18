@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const products = [
-  { id: 1, name: 'Lavender Algae Peel-off Mask', price: 32, availability: 'in stock', img: 'https://img.tradees.com/file/upload/2020/03/24/Private-Label-Natural-organic-purple-clay-peel-off-powder-mask.jpg' },
-  { id: 2, name: 'Algae Peel-off Mask', price: 32, availability: 'in stock', img: 'https://avatars.mds.yandex.net/i?id=83266e7278c988d38a71420c771b1086674544cc-7762130-images-thumbs&n=13' },
-  { id: 3, name: 'Hibiscus Algae Peel-off Mask', price: 32, availability: 'in stock', img: 'https://avatars.mds.yandex.net/i?id=f78c543705e7e6d91fc2344e6a4dd15d38cb4040-4592636-images-thumbs&n=13' },
-  { id: 4, name: 'Marine Algae Face Moisturizer', price: 68, availability: 'out of stock', img: 'https://avatars.mds.yandex.net/i?id=51de6dd61eec1210bd31596879c1860700099c11-8177770-images-thumbs&n=13' },
+  { id: 1, name: 'Lavender Algae Peel-off Mask', price: 32, availability: 'in stock', img: 'https://frangipani-dv.ru/wp-content/uploads/2022/08/33674215-1.jpg' },
+  { id: 2, name: 'Algae Peel-off Mask', price: 32, availability: 'in stock', img: 'https://www.belieef.com/image/cache/main/jmsolution/jmsolution_500012-650x650.jpg' },
+  { id: 3, name: 'Hibiscus Algae Peel-off Mask', price: 32, availability: 'in stock', img: 'https://lauty.ru/images/products/425268/image-0.png' },
+  { id: 4, name: 'Marine Algae Face Moisturizer', price: 68, availability: 'out of stock', img: 'https://www.pepinoshop.com/ftp/immagini/27800_11315___.jpg'}
   // More products can be added here
 ];
 
