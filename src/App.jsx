@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import LandingPage from './components/LandingPage';
 import CategoriesGrid from './components/CategoriesGrid';
@@ -12,20 +12,34 @@ import ProductPage from './components/ProductPage';
 import ProductDetail from './components/ProductDetail';
 import BlogPage from './components/BlogPage';
 import AboutUs from './components/AboutUs';
-// import CategoriesGrid from './components/CategoriesGrid';
+import AddToCartPopup from './components/AddToCartPopup';
 
 function App() {
+  // Cart state
+  const [cartItems, setCartItems] = useState([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  // Function to add items to the cart
+  const addToCart = (product) => {
+    setCartItems([...cartItems, product]);
+  };
+
+  // Function to toggle cart visibility
+  const toggleCart = () => {
+    setIsCartOpen(!isCartOpen);
+  };
+
   return (
     <Router>
       <div className="App">
-        <Header />
-        
+        {/* Pass toggleCart and cartItems to Header */}
+        <Header toggleCart={toggleCart} cartItems={cartItems} />
+
         <Routes>
           <Route path="/" element={
             <>
               <LandingPage />
               <CategoriesGrid />
-              
               <WhyBeautyProducts />
               <ProductCarousel />
               <NewArrivals />
@@ -33,10 +47,14 @@ function App() {
             </>
           } />
           <Route path="/product" element={<ProductPage />} />
-          <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/product/:id" element={<ProductDetail addToCart={addToCart} />} />
           <Route path="/blog" element={<BlogPage />} />
-          <Route path='/About' element={<AboutUs />} />
+          <Route path="/about" element={<AboutUs />} />
         </Routes>
+
+        {/* Show cart popup if isCartOpen is true */}
+        {isCartOpen && <AddToCartPopup cartItems={cartItems} toggleCart={toggleCart} />}
+
         <Footer />
       </div>
     </Router>

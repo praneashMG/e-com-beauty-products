@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 const products = [
   { id: 1, name: 'Lavender Algae Peel-off Mask', price: 32, availability: 'in stock', img: 'https://frangipani-dv.ru/wp-content/uploads/2022/08/33674215-1.jpg' },
-  { id: 2, name: 'Algae Peel-off Mask', price: 32, availability: 'in stock', img: 'https://www.belieef.com/image/cache/main/jmsolution/jmsolution_500012-650x650.jpg' },
-  { id: 3, name: 'Hibiscus Algae Peel-off Mask', price: 32, availability: 'in stock', img: 'https://lauty.ru/images/products/425268/image-0.png' },
+  { id: 2, name: 'Algae Peel-off Mask', price: 32, availability: 'in stock', img: 'https://i.ebayimg.com/images/g/O1IAAOSwzBVjHOUt/s-l1600.jpg' },
+  { id: 3, name: 'Hibiscus Algae Peel-off Mask', price: 32, availability: 'in stock', img: 'https://koreantica.ru/wp-content/uploads/2023/04/cosrx-aloe-soothing-sun-cream-spf50-2-768x768.jpg' },
   { id: 4, name: 'Marine Algae Face Moisturizer', price: 68, availability: 'out of stock', img: 'https://www.pepinoshop.com/ftp/immagini/27800_11315___.jpg'}
   // More products can be added here
 ];

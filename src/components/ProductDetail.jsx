@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import AddToCartPopup from './AddToCartPopup'; // Adjust the path as necessary
 
 // Sample product data including multiple images
 const products = [
@@ -11,10 +12,9 @@ const products = [
     img: 'https://frangipani-dv.ru/wp-content/uploads/2022/08/33674215-1.jpg',
     images: [
       'https://foamstore.ru/upload/photo/%D0%90%D0%A0%D0%A2-2345/%D0%90%D0%A0%D0%A2-23451.jpg',
-      'https://cdn.100sp.ru/pictures/483065004',
+      'https://foamstore.ru/upload/photo/%D0%90%D0%A0%D0%A2-1867/%D0%90%D0%A0%D0%A2-18671.jpg',
       'https://myondon.ru/image/cache/catalog/products/sonatural/SN18-1000x1000.jpg',
       'https://img.joomcdn.net/705716af0932fc362068c668a90814ef931ea90d_original.jpeg',
-   
     ],
     description: 'A soothing mask infused with lavender and algae to nourish and refresh your skin. Lavender has anti-inflammatory and antiseptic properties which help in reducing skin irritations and redness. Algae is rich in vitamins and minerals, making it a fantastic skin hydrator and detoxifier. This mask will leave your skin feeling soft, smooth, and rejuvenated. Ideal for all skin types, it especially helps to soothe sensitive skin and provides an instant glow.' 
   },
@@ -23,12 +23,14 @@ const products = [
     name: 'Charcoal Peel-off Mask', 
     price: 25, 
     availability: 'in stock', 
-    img: 'https://example.com/charcoal-mask.jpg',
+    img: 'https://i.ebayimg.com/images/g/O1IAAOSwzBVjHOUt/s-l1600.jpg',
     images: [
-      'https://example.com/charcoal-mask.jpg',
-      'https://dummyimage.com/150x200/ccc/000.jpg&text=Image+5',
-      'https://dummyimage.com/150x200/ccc/000.jpg&text=Image+6',
-      'https://dummyimage.com/150x200/ccc/000.jpg&text=Image+7',
+      'https://i.ebayimg.com/images/g/O1IAAOSwzBVjHOUt/s-l1600.jpg',
+      'https://m.media-amazon.com/images/I/41724skmr2L.jpg',
+      'https://i.ebayimg.com/images/g/O1IAAOSwzBVjHOUt/s-l1600.jpg',
+      'https://m.media-amazon.com/images/I/71lKAXmW--L.jpg',
+        
+      
     ],
     description: 'A revitalizing algae peel-off mask that hydrates and detoxifies your skin. The algae extract in this mask deeply penetrates your skin, offering a burst of hydration while removing impurities. This peel-off mask works to exfoliate dead skin cells and rejuvenate the surface of your skin. Ideal for all skin types, it can be used regularly to keep your skin looking youthful and radiant.' 
   },
@@ -39,10 +41,10 @@ const products = [
     availability: 'in stock',  
     img: 'https://lauty.ru/images/products/425268/image-0.png',
     images: [
-      'https://example.com/charcoal-mask.jpg',
-      'https://dummyimage.com/150x200/ccc/000.jpg&text=Image+5',
-      'https://dummyimage.com/150x200/ccc/000.jpg&text=Image+6',
-      'https://dummyimage.com/150x200/ccc/000.jpg&text=Image+7',
+      'https://koreantica.ru/wp-content/uploads/2023/04/cosrx-aloe-soothing-sun-cream-spf50-2-768x768.jpg',
+      'https://a.allegroimg.com/original/11e7ae/786180dc4ae1aad390b584ac313e/COSRX-Aloe-Soothing-Sun-SPF50-Krem-Ochronny-50ml',
+      'https://halykmarket.kz/s3/product/1208401009/4860127f-d734-4a63-8e01-c4b454fbe73d/4860127f-d734-4a63-8e01-c4b454fbe73d.jpg',
+      'https://i.ebayimg.com/images/g/f2AAAOSwNiNZp5jb/s-l1600.jpg',
     ],
     description: 'This hibiscus-infused peel-off mask provides intense hydration and promotes a youthful glow. Hibiscus is known as the “Botox plant” because it increases skin elasticity, offering a natural firming effect. Combined with algae extract, this mask helps restore moisture to the skin while exfoliating dead skin cells, giving your face a fresh and luminous appearance. The powerful blend of antioxidants in hibiscus also helps to protect your skin from environmental stressors, making this mask a great addition to your skincare routine.' 
   },
@@ -70,6 +72,7 @@ const ProductDetail = () => {
   const [quantity, setQuantity] = useState(1);
   const [showMore, setShowMore] = useState(false);
   const [selectedImage, setSelectedImage] = useState(product.img);
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
 
   const handleQuantityChange = (type) => {
     if (type === 'increase') {
@@ -96,37 +99,46 @@ const ProductDetail = () => {
     setSelectedImage(imgUrl);
   };
 
+  const handleAddToCart = () => {
+    setIsPopupVisible(true);
+    // Optionally, add logic to add the item to the cart here
+  };
+
+  const handleClosePopup = () => {
+    setIsPopupVisible(false);
+  };
+
   return (
     <div className="bg-gray-00 py-10">
       <div className="container mx-auto flex flex-col lg:flex-row items-start justify-center space-y-8 lg:space-y-0 lg:space-x-16 px-4">
         
         {/* Product Image and Thumbnails */}
-        <div className="lg:w-1/2 flex justify-center">
-          <div className="w-full h-auto overflow-hidden rounded-lg shadow-sg">
+        <div className="lg:w-1/2 flex flex-col justify-center items-center">
+          {/* Main Image */}
+          <div className="w-full max-w-sm h-70 overflow-hidden rounded-lg">
             <img
               src={selectedImage}
               alt={product.name}
               className="object-cover w-full h-full"
             />
           </div>
-          <div className="flex flex-col items-center space-y-4 mt-4">
+          {/* Thumbnails Grid */}
+          <div className="grid grid-cols-4 gap-4 mt-4">
             {product.images.map((image, index) => (
               <img
                 key={index}
                 src={image}
                 alt={`Thumbnail ${index + 1}`}
                 onClick={() => handleImageClick(image)}
-                className="w-16 h-16 object-cover cursor-pointer border border-gray-300 rounded-md"
+                className="w-24 h-24 object-cover cursor-pointer border border-gray-300 rounded-md"
               />
             ))}
           </div>
         </div>
-
         {/* Product Details */}
-        <div className="lg:w-1/2 mt-10 lg:mt-20">
-          <h1 className="text-4xl font-bold text-gray-800 mb-6">{product.name}</h1>
-          <p className="text-2xl text-gray-700 mb-2">${product.price.toFixed(2)} CAD</p>
-          
+        <div className="lg:w-1/2 mt-10 lg:mt-0">
+          <h1 className="text-3xl font-bold text-gray-800 mb-4">{product.name}</h1>
+          <p className="text-xl text-gray-700 mb-2">${product.price.toFixed(2)} CAD</p>  
           {/* Product Description with Read More */}
           <p className="text-lg text-gray-600 mb-6">
             {renderDescription()} 
@@ -139,7 +151,6 @@ const ProductDetail = () => {
               </button>
             )}
           </p>
-
           {/* Style Options */}
           <div className="mb-6">
             <p className="text-lg font-semibold mb-2">Style</p>
@@ -148,7 +159,6 @@ const ProductDetail = () => {
               <button className="px-4 py-2 bg-gray-200 rounded-full text-gray-700 focus:bg-gray-800 focus:text-white">Mask + Applicator</button>
             </div>
           </div>
-
           {/* Quantity Selector */}
           <div className="mb-8">
             <p className="text-lg font-semibold mb-2">Quantity</p>
@@ -164,7 +174,10 @@ const ProductDetail = () => {
           </div>
 
           {/* Add to Cart Button */}
-          <button className="w-full py-3 mt-4 bg-gray-200 text-gray-800 font-semibold rounded-md mb-4 border border-gray-400 hover:bg-gray-300">
+          <button 
+            onClick={handleAddToCart} 
+            className="w-full py-3 mt-4 bg-gray-200 text-gray-800 font-semibold rounded-md mb-4 border border-gray-400 hover:bg-gray-300"
+          >
             Add to Cart
           </button>
 
@@ -174,6 +187,13 @@ const ProductDetail = () => {
           </button>
         </div>
       </div>
+
+      {/* AddToCartPopup component */}
+      <AddToCartPopup 
+        product={product} 
+        isVisible={isPopupVisible} 
+        onClose={handleClosePopup} 
+      />
     </div>
   );
 };
