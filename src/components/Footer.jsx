@@ -27,8 +27,6 @@ const Footer = () => {
               <li><a href="#" className="hover:underline">Blog</a></li>
             </ul>
           </div>
-          
-
           {/* Mission and Social Media Section */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Our mission</h3>
@@ -44,10 +42,9 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
         {/* Footer Bottom Text */}
         <div className="mt-8 text-center">
-          <p className="text-xs">© 2024, theme-refresh-demo Powered by Shopify</p>
+          <p className="text-xs">© 2024, theme-refresh-demo Powered by Nutz</p>
         </div>
       </div>
     </footer>

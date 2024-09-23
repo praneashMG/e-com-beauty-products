@@ -13,6 +13,8 @@ import ProductDetail from './components/ProductDetail';
 import BlogPage from './components/BlogPage';
 import AboutUs from './components/AboutUs';
 import AddToCartPopup from './components/AddToCartPopup';
+import Accordion from './components/AccordionItem';
+import ContactSection from './components/ContactSection';
 
 function App() {
   // Cart state
@@ -44,12 +46,14 @@ function App() {
               <ProductCarousel />
               <NewArrivals />
               <WhyChooseUs />
+            
             </>
           } />
           <Route path="/product" element={<ProductPage />} />
           <Route path="/product/:id" element={<ProductDetail addToCart={addToCart} />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/about" element={<AboutUs />} />
+          <Route path="/contact" element={<ContactSection />} />
         </Routes>
 
         {/* Show cart popup if isCartOpen is true */}
