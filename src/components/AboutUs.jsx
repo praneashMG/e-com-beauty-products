@@ -13,7 +13,7 @@ const AboutUs = () => {
         </p>
         <div className="w-full flex justify-center mb-10">
           <img
-            src="https://zosh3polonne.km.ua/images/oformlenie-29.png"
+            src="https://u.livelib.ru/reader/Explosive/o/9e90k3b0/o-o.jpeg"
             alt="flower"
             className="h-40 md:h-52 object-contain"
           />

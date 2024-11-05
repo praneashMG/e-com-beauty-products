@@ -16,7 +16,6 @@ const ContactSection = () => {
             to learn more about our services, partnership opportunities, or anything else you're curious about.
           </p>
         </div>
-
         {/* Contact Form Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Contact Form */}

@@ -1,5 +1,4 @@
 import React from "react";
-
 const WhyChooseUs = () => {
   return (
     <section className="py-16 px-4 bg-[] dark:bg-gray-100">
@@ -8,8 +7,6 @@ const WhyChooseUs = () => {
       
         <span className="text-pink-500 dark:text-pink-300">Why</span>
 <span className="text-black dark:text-gray-200"> Choose Us</span>
-
-
         </h2>
         <p className="text-gray-700 mt-4 text-base md:text-lg dark:text-gray-300">
           "Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -50,5 +47,4 @@ const WhyChooseUs = () => {
     </section>
   );
 };
-
 export default WhyChooseUs;

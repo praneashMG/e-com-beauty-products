@@ -1,23 +1,23 @@
 import React from 'react';
 import Slider from 'react-slick';
-import { Link } from 'react-router-dom'; // Import Link for routing
-
+import { Link } from 'react-router-dom';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
 const categories = [
   {
     title: 'Skin Care',
     imageUrl: 'https://i.pinimg.com/originals/1d/72/2c/1d722c824a0119c641f8abbeabe54275.jpg',
-    link: '/product', // Link to ProductPage
+    link: '/product',
   },
   {
     title: 'Body Care',
     imageUrl: 'https://www.beautytester.it/wp-content/uploads/2018/01/gambe-secche-rimedi-naturali.jpg',
+    link: '/product',
   },
   {
     title: 'Nail Polish',
     imageUrl: 'https://p0.zoon.ru/8/d/5ad5d223a98f350ce84ad818_5ad5fe93d5a92.jpg',
+    link: '/product',
   },
   {
     title: 'Skin Care',
@@ -27,13 +27,14 @@ const categories = [
   {
     title: 'Body Care',
     imageUrl: 'https://www.beautytester.it/wp-content/uploads/2018/01/gambe-secche-rimedi-naturali.jpg',
+    link: '/product',
   },
   {
     title: 'Nail Polish',
     imageUrl: 'https://p0.zoon.ru/8/d/5ad5d223a98f350ce84ad818_5ad5fe93d5a92.jpg',
+    link: '/product',
   },
 ];
-
 const CategoryCard = ({ title, imageUrl, link }) => {
   const cardContent = (
     <div className="bg-purple-100 rounded-md shadow-md overflow-hidden mx-2 sm:mx-4">
@@ -45,7 +46,6 @@ const CategoryCard = ({ title, imageUrl, link }) => {
       </div>
     </div>
   );
-
   return link ? (
     <Link to={link}>
       {cardContent}
@@ -54,7 +54,6 @@ const CategoryCard = ({ title, imageUrl, link }) => {
     cardContent
   );
 };
-
 const CategoriesGrid = () => {
   const settings = {
     dots: false,
@@ -83,7 +82,6 @@ const CategoriesGrid = () => {
       },
     ],
   };
-
   return (
     <div className="w-full bg-[] flex justify-center py-8 sm:py-12">
       <div className="max-w-6xl w-full px-4 sm:px-6">
@@ -99,5 +97,4 @@ const CategoriesGrid = () => {
     </div>
   );
 };
-
 export default CategoriesGrid;
