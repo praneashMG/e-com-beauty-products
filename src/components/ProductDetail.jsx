@@ -1,4 +1,4 @@
-  import React, { useState } from 'react';
+  import  { useState } from 'react';
   import { useParams } from 'react-router-dom';
   import AddToCartPopup from './AddToCartPopup'; // Adjust the path as necessary
   import Accordion from './AccordionItem';

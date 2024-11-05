@@ -44,7 +44,7 @@ const Footer = () => {
         </div>
         {/* Footer Bottom Text */}
         <div className="mt-8 text-center">
-          <p className="text-xs">© 2024, theme-refresh-demo Powered by Nutz</p>
+          <p className="text-xs">© 2024, theme-refresh-demo Powered by PGR</p>
         </div>
       </div>
     </footer>

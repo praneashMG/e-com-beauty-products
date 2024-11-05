@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import PropTypes from 'prop-types'; // Add PropTypes for validation
 
 // Sample data for the accordion
 const accordionItems = [
@@ -40,6 +41,15 @@ const AccordionItem = ({ title, content, icon, isOpen, onClick }) => {
       {isOpen && <div className="p-4 text-gray-600">{content}</div>}
     </div>
   );
+};
+
+// Add PropTypes validation for the props
+AccordionItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
+  isOpen: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 
 const Accordion = () => {

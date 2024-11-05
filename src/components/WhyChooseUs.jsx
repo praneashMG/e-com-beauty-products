@@ -1,16 +1,14 @@
-import React from "react";
 const WhyChooseUs = () => {
   return (
     <section className="py-16 px-4 bg-[] dark:bg-gray-100">
       <div className="text-center mb-8">
         <h2 className="text-3xl md:text-4xl font-bold text-white dark:text-gray-100">
-      
-        <span className="text-pink-500 dark:text-pink-300">Why</span>
-<span className="text-black dark:text-gray-200"> Choose Us</span>
+          <span className="text-pink-500 dark:text-pink-300">Why</span>
+          <span className="text-black dark:text-gray-200"> Choose Us</span>
         </h2>
         <p className="text-gray-700 mt-4 text-base md:text-lg dark:text-gray-300">
-          "Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-          Lorem Ipsum has been the industry's standard dummy text ever since."
+          &quot;Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry&apos;s standard dummy text ever since.&quot;
         </p>
       </div>
       <div className="max-w-7xl mx-auto">

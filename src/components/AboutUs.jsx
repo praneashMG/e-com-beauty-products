@@ -1,5 +1,3 @@
-import React from 'react';
-
 const AboutUs = () => {
   return (
     <div className="bg-gradient-to-b from-white to-blue-50 py-10">
@@ -19,19 +17,18 @@ const AboutUs = () => {
           />
         </div>
       </section>
-
       {/* Section 2: Meet the Founder */}
       <section className="container mx-auto flex flex-col md:flex-row items-center px-4 md:px-8 lg:px-12 mb-10 relative">
         <div className="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-6 rounded-xl md:w-1/2 lg:w-1/3 relative z-10">
           <h3 className="text-2xl font-bold mb-4">Meet Marilyne, BKIND Founder</h3>
           <p className="text-sm leading-relaxed">
-            Marilyne, who holds a master's degree in microbiology, has been developing her own
+            Marilyne, who holds a master degree in microbiology, has been developing her own
             cosmetics for years. Because of her very sensitive skin, she found that the products
-            available in pharmacies and large stores didn’t suit her. This led her to try natural
+            available in pharmacies and large stores  suit her. This led her to try natural
             ingredients, and she quickly realized the power of them on her skin.
           </p>
           <p className="text-sm leading-relaxed mt-2">
-            BKIND was born in 2014 and is the result of Marilyne's interest in natural cosmetics and
+            BKIND was born in 2014 and is the result of  interest in natural cosmetics and
             expertise in microbiology.
           </p>
         </div>
@@ -44,7 +41,6 @@ const AboutUs = () => {
           />
         </div>
       </section>
-
       {/* Section 3: Our Store */}
       <section className="container mx-auto flex flex-col md:flex-row-reverse items-center px-4 md:px-8 lg:px-12 relative">
         <div className="bg-yellow-100 text-gray-800 p-6 rounded-xl md:w-1/2 lg:w-1/3 relative z-10">

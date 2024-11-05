@@ -1,7 +1,6 @@
-import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons';
-import { faFacebookF, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
+// Removed unused imports for social media icons and React
 
 const ContactSection = () => {
   return (
@@ -11,9 +10,9 @@ const ContactSection = () => {
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold mb-4">Why Contact Us?</h2>
           <p className="text-gray-600 leading-relaxed">
-            We value your inquiries and feedback! Whether you're a potential client, partner, or just have questions, 
-            we're here to assist you. Our team is available to provide prompt responses to your queries. Reach out 
-            to learn more about our services, partnership opportunities, or anything else you're curious about.
+            We value your inquiries and feedback! Whether you&apos;re a potential client, partner, or just have questions, 
+            we&apos;re here to assist you. Our team is available to provide prompt responses to your queries. Reach out 
+            to learn more about our services, partnership opportunities, or anything else you&apos;re curious about.
           </p>
         </div>
         {/* Contact Form Section */}

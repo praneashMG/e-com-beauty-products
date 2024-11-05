@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'; // Keep only the necessary imports
+import PropTypes from 'prop-types';
 
 const AddToCartPopup = ({ product, isVisible, onClose }) => {
   const [cart, setCart] = useState([]);
@@ -54,5 +55,14 @@ const AddToCartPopup = ({ product, isVisible, onClose }) => {
   );
 };
 
+// PropTypes validation
+AddToCartPopup.propTypes = {
+  product: PropTypes.shape({
+    img: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+  }).isRequired,
+  isVisible: PropTypes.bool.isRequired,
+  onClose: PropTypes.func.isRequired,
+};
+
 export default AddToCartPopup;
-    

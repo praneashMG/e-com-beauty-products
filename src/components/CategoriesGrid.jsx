@@ -1,8 +1,9 @@
-import React from 'react';
+import PropTypes from 'prop-types';  // Import PropTypes
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+
 const categories = [
   {
     title: 'Skin Care',
@@ -35,6 +36,7 @@ const categories = [
     link: '/product',
   },
 ];
+
 const CategoryCard = ({ title, imageUrl, link }) => {
   const cardContent = (
     <div className="bg-purple-100 rounded-md shadow-md overflow-hidden mx-2 sm:mx-4">
@@ -54,6 +56,14 @@ const CategoryCard = ({ title, imageUrl, link }) => {
     cardContent
   );
 };
+
+// Add prop validation for CategoryCard component
+CategoryCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  imageUrl: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
+};
+
 const CategoriesGrid = () => {
   const settings = {
     dots: false,
@@ -82,6 +92,7 @@ const CategoriesGrid = () => {
       },
     ],
   };
+
   return (
     <div className="w-full bg-[] flex justify-center py-8 sm:py-12">
       <div className="max-w-6xl w-full px-4 sm:px-6">
@@ -97,4 +108,5 @@ const CategoriesGrid = () => {
     </div>
   );
 };
+
 export default CategoriesGrid;
