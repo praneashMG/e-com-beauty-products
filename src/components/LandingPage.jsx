@@ -7,7 +7,7 @@ const LandingPage = () => {
       <div className="relative w-full max-w-screen-xl">
         <img
           src={image1}
-          alt="Glowing Skin"
+          alt="Glowing skin, naturally"
           className="relative w-[100%] h-[100vh] md:h-screen object-cover mx-auto md:ml-[210px]"
         />
 <div className="absolute top-1/2 left-1/2 md:left-[15%] lg:left-[15%] transform -translate-x-1/2 -translate-y-1/2 w-[60%] sm:w-[80%] md:w-[70%] lg:w-[50%] min-h-[100px] sm:min-h-[350px] max-w-sm bg-gradient-to-b from-[#a1c4fd] via-[#c2e9fb] to-[#f6d365] rounded-lg shadow-lg p-4 sm:p-6 flex flex-col justify-center z-10">
