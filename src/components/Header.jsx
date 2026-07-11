@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FiSearch, FiUser, FiShoppingCart, FiX, FiMenu } from 'react-icons/fi';
 
-const Header = () => {
+const Header = ({ toggleCart, cartItems }) => {
   const [searchOpen, setSearchOpen] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -24,12 +24,11 @@ const Header = () => {
 
         {/* Nav links for desktop and tablet */}
         <nav className="hidden md:flex items-center space-x-4 md:space-x-6">
-          <a href="/" className="text-gray-700 hover:text-gray-900">Home</a>
-          <a href="#" className="text-gray-700 hover:text-gray-900">Shop</a>
-          <a href="/blog" className="text-gray-700 hover:text-gray-900">Blog</a>
-          <a href="/About" className="text-gray-700 hover:text-gray-900">About</a>
-          <a href="/contact" className="text-gray-700 hover:text-gray-900">Contact</a>
-          <a href="#" className="text-gray-700 hover:text-gray-900">FAQ</a>
+          <Link to="/" className="text-gray-700 hover:text-gray-900">Home</Link>
+          <Link to="/product" className="text-gray-700 hover:text-gray-900">Shop</Link>
+          <Link to="/blog" className="text-gray-700 hover:text-gray-900">Blog</Link>
+          <Link to="/about" className="text-gray-700 hover:text-gray-900">About</Link>
+          <Link to="/contact" className="text-gray-700 hover:text-gray-900">Contact</Link>
         </nav>
 
         {/* Icons and Hamburger for mobile */}
@@ -40,12 +39,14 @@ const Header = () => {
           <a href="#" className="text-gray-700 hover:text-gray-900">
             <FiUser size={22} />
           </a>
-          <a href="#" className="relative text-gray-700 hover:text-gray-900">
+          <button onClick={toggleCart} className="relative text-gray-700 hover:text-gray-900">
             <FiShoppingCart size={22} />
-            <span className="absolute top-0 right-0 inline-flex items-center justify-center px-1 py-0.5 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full">
-              3
-            </span>
-          </a>
+            {cartItems && cartItems.length > 0 && (
+              <span className="absolute top-0 right-0 inline-flex items-center justify-center px-1 py-0.5 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full">
+                {cartItems.length}
+              </span>
+            )}
+          </button>
 
          
           <button onClick={toggleMenu} className="md:hidden text-gray-700 hover:text-gray-900">
@@ -63,12 +64,11 @@ const Header = () => {
             </button>
           </div>
           <div className="flex flex-col items-start px-6 py-2">
-            <a href="/" className="text-gray-700 hover:text-gray-900 py-2">Home</a>
-            <a href="#" className="text-gray-700 hover:text-gray-900 py-2">Shop</a>
-            <a href="/blog" className="text-gray-700 hover:text-gray-900">Blog</a>
-            <a href="/About" className="text-gray-700 hover:text-gray-900 py-2">About</a>
-            <a href="/contact" className="text-gray-700 hover:text-gray-900 py-2">Contact</a>
-            <a href="#" className="text-gray-700 hover:text-gray-900 py-2">FAQ</a>
+            <Link to="/" onClick={toggleMenu} className="text-gray-700 hover:text-gray-900 py-2">Home</Link>
+            <Link to="/product" onClick={toggleMenu} className="text-gray-700 hover:text-gray-900 py-2">Shop</Link>
+            <Link to="/blog" onClick={toggleMenu} className="text-gray-700 hover:text-gray-900 py-2">Blog</Link>
+            <Link to="/about" onClick={toggleMenu} className="text-gray-700 hover:text-gray-900 py-2">About</Link>
+            <Link to="/contact" onClick={toggleMenu} className="text-gray-700 hover:text-gray-900 py-2">Contact</Link>
           </div>
         </nav>
       )}

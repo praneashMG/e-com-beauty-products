@@ -13,7 +13,6 @@ import ProductDetail from './components/ProductDetail';
 import BlogPage from './components/BlogPage';
 import AboutUs from './components/AboutUs';
 import AddToCartPopup from './components/AddToCartPopup';
-import Accordion from './components/AccordionItem';
 import ContactSection from './components/ContactSection';
 
 function App() {
@@ -34,7 +33,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        {/* Pass toggleCart and cartItems to Header */}
+        {/* Pass toggle Cart and cartItems to Header */}
         <Header toggleCart={toggleCart} cartItems={cartItems} />
 
         <Routes>
@@ -60,9 +59,11 @@ function App() {
         {isCartOpen && <AddToCartPopup cartItems={cartItems} toggleCart={toggleCart} />}
 
         <Footer />
+        
       </div>
     </Router>
   );
+  
 }
 
 export default App;

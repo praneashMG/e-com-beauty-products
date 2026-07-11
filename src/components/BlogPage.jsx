@@ -19,10 +19,8 @@
             "Drinking enough water is crucial to maintaining your body’s well-being. We've all heard it: Our bodies are made up of 70% water which makes it essential to good function...",
         imageUrl:
             "https://www.wallpaperuse.com/wallp/0-705_m.jpg",
-        },
-        
+        }, 
     ];
-
     return (
         <div className="bg-gray-100 min-h-screen p-6">
         <div className="grid md:grid-cols-2 gap-20">
@@ -49,5 +47,4 @@
         </div>
     );
     };
-
     export default BlogPage;

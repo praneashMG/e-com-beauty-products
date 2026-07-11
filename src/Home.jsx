@@ -23,7 +23,7 @@ const Home = () => {
             {/* Product 1 */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               <img
-                src="https://via.placeholder.com/300"
+                src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=600&q=80"
                 alt="Product 1"
                 className="w-full h-48 object-cover"
               />
@@ -38,7 +38,7 @@ const Home = () => {
             {/* Product 2 */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               <img
-                src="https://via.placeholder.com/300"
+                src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=600&q=80"
                 alt="Product 2"
                 className="w-full h-48 object-cover"
               />
@@ -53,7 +53,7 @@ const Home = () => {
             {/* Product 3 */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden">
               <img
-                src="https://via.placeholder.com/300"
+                src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=600&q=80"
                 alt="Product 3"
                 className="w-full h-48 object-cover"
               />

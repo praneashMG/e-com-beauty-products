@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faTwitter, faInstagram, faTiktok, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -21,10 +22,10 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">About</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="hover:underline">Our story</a></li>
+              <li><Link to="/about" className="hover:underline">Our story</Link></li>
               <li><a href="#" className="hover:underline">Shipping and returns</a></li>
-              <li><a href="#" className="hover:underline">Contact</a></li>
-              <li><a href="#" className="hover:underline">Blog</a></li>
+              <li><Link to="/contact" className="hover:underline">Contact</Link></li>
+              <li><Link to="/blog" className="hover:underline">Blog</Link></li>
             </ul>
           </div>
           {/* Mission and Social Media Section */}

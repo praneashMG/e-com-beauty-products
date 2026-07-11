@@ -14,7 +14,7 @@ const NewArrivals = () => {
           {/* First Item */}
           <div className="relative bg-gray-100 rounded-lg overflow-hidden">
             <img
-              src="https://i.pinimg.com/originals/01/9a/84/019a842be76da833aee82b2792e10fd3.jpg" // Replace with the actual image URL
+              src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=800&q=80" // Replace with the actual image URL
               alt="New Arrivals"
               className="w-full h-64 md:h-80 object-cover"
             />
@@ -66,7 +66,7 @@ const NewArrivals = () => {
           {/* First Item (Duplicate) */}
           <div className="relative bg-gray-100 rounded-lg overflow-hidden">
             <img
-              src="https://static.wixstatic.com/media/49c839_fc89763d291e4742a64dd1c6ca363961~mv2.jpg/v1/fill/w_2500,h_1668,al_c/49c839_fc89763d291e4742a64dd1c6ca363961~mv2.jpg" // Replace with the actual image URL
+              src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=800&q=80" // Replace with the actual image URL
               alt="Top Collections"
               className="w-full h-64 md:h-80 object-cover"
             />

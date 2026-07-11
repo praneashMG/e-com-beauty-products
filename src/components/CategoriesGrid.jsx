@@ -7,32 +7,32 @@ import 'slick-carousel/slick/slick-theme.css';
 const categories = [
   {
     title: 'Skin Care',
-    imageUrl: 'https://i.pinimg.com/originals/1d/72/2c/1d722c824a0119c641f8abbeabe54275.jpg',
+    imageUrl: '/skincare_1.png',
     link: '/product',
   },
   {
     title: 'Body Care',
-    imageUrl: 'https://www.beautytester.it/wp-content/uploads/2018/01/gambe-secche-rimedi-naturali.jpg',
+    imageUrl: '/skincare_4.png',
     link: '/product',
   },
   {
     title: 'Nail Polish',
-    imageUrl: 'https://p0.zoon.ru/8/d/5ad5d223a98f350ce84ad818_5ad5fe93d5a92.jpg',
+    imageUrl: '/skincare_2.png',
     link: '/product',
   },
   {
     title: 'Skin Care',
-    imageUrl: 'https://i.pinimg.com/originals/1d/72/2c/1d722c824a0119c641f8abbeabe54275.jpg',
+    imageUrl: '/skincare_3.png',
     link: '/product',
   },
   {
     title: 'Body Care',
-    imageUrl: 'https://www.beautytester.it/wp-content/uploads/2018/01/gambe-secche-rimedi-naturali.jpg',
+    imageUrl: '/skincare_1.png',
     link: '/product',
   },
   {
     title: 'Nail Polish',
-    imageUrl: 'https://p0.zoon.ru/8/d/5ad5d223a98f350ce84ad818_5ad5fe93d5a92.jpg',
+    imageUrl: '/skincare_2.png',
     link: '/product',
   },
 ];
